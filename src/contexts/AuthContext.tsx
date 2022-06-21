@@ -65,7 +65,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 path: '/'
             });
 
-
             setUser({
                 email,
                 permissions,
