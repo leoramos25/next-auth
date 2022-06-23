@@ -1,5 +1,7 @@
+import { destroyCookie } from 'nookies';
 import { useContext, useEffect } from 'react'
 import { AuthContext } from '../contexts/AuthContext'
+import { AuthTokenError } from '../services/errors/AuthTokenError';
 import { setupApiClient } from '../services/api';
 import { api } from '../services/apiClient';
 
@@ -23,7 +25,6 @@ export const getServerSideProps = withSSRAuth(async (ctx) => {
     const apiClient = setupApiClient(ctx);
     const response = apiClient.get('/me');
 
-    console.log((await response).data);
     return {
         props: {}
     }
